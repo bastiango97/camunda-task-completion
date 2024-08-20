@@ -17,11 +17,11 @@ const completeTaskWithText = async (taskId, text) => {
     };
 
     try {
-        // Complete the task by sending a POST request to Camunda
-        await axios.post(`http://localhost:8080/engine-rest/task/${taskId}/complete`, payload);
+        // Complete the task by sending a POST request to the Camunda live service
+        await axios.post(`https://demo-aseguradoras.onrender.com/engine-rest/task/${taskId}/complete`, payload);
     } catch (error) {
         throw new Error('Error completando la tarea: ' + error.message);
-    }
+    }    
 };
 
 // Route for accepting the insurance
